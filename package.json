@@ -1,0 +1,36 @@
+{
+  "name": "whatsync",
+  "version": "0.2.0",
+  "description": "Use your WhatsApp from the terminal: read chats, search messages and send, from you or your AI agent.",
+  "license": "MIT",
+  "homepage": "https://www.npmjs.com/package/whatsync",
+  "keywords": [
+    "whatsapp",
+    "cli",
+    "whatsapp-api",
+    "ai-agent",
+    "mcp",
+    "whatsync"
+  ],
+  "type": "module",
+  "bin": {
+    "whatsync": "dist/whatsync.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --target=node --banner='#!/usr/bin/env node' --outfile=dist/whatsync.js && chmod +x dist/whatsync.js",
+    "typecheck": "tsc --noEmit -p .",
+    "test": "bun test",
+    "prepublishOnly": "bun run typecheck && bun run test && bun run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0"
+  }
+}

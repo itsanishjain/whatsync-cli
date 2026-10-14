@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "whatsync": {
+      "url": "https://whatsync.app/api/mcp"
+    }
+  }
+}
